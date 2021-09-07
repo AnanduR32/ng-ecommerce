@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,9 @@ import { ProductsDisplayComponent } from './components/main-content/products-dis
 import { ProductsDisplaySidebarComponent } from './components/main-content/products-display/products-display-sidebar/products-display-sidebar.component';
 import { ProductsDisplayMainComponent } from './components/main-content/products-display/products-display-main/products-display-main.component';
 import { CheckDescriptionPipe } from './pipes/check-description.pipe';
+import { RegisterationComponent } from './components/authentication/registeration/registeration.component';
+import { SignInComponent } from './components/authentication/sign-in/sign-in.component';
+import { PasswordEncryptPipe } from './pipes/password-encrypt.pipe';
 
 @NgModule({
   declarations: [
@@ -30,13 +34,17 @@ import { CheckDescriptionPipe } from './pipes/check-description.pipe';
     ProductsDisplayComponent,
     ProductsDisplaySidebarComponent,
     ProductsDisplayMainComponent,
-    CheckDescriptionPipe
+    CheckDescriptionPipe,
+    RegisterationComponent,
+    SignInComponent,
+    PasswordEncryptPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

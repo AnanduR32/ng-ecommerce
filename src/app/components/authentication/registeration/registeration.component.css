@@ -1,0 +1,8 @@
+span{
+    text-decoration: none;
+    color: #B26E63;
+}
+span:hover{
+    font-weight: 600;
+    cursor: pointer;
+}
