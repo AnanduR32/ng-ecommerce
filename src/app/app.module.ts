@@ -20,6 +20,7 @@ import { CheckDescriptionPipe } from './pipes/check-description.pipe';
 import { RegisterationComponent } from './components/authentication/registeration/registeration.component';
 import { SignInComponent } from './components/authentication/sign-in/sign-in.component';
 import { PasswordEncryptPipe } from './pipes/password-encrypt.pipe';
+import { CartComponent } from './components/private/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PasswordEncryptPipe } from './pipes/password-encrypt.pipe';
     CheckDescriptionPipe,
     RegisterationComponent,
     SignInComponent,
-    PasswordEncryptPipe
+    PasswordEncryptPipe,
+    CartComponent
   ],
   imports: [
     BrowserModule,

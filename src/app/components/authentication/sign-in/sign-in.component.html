@@ -16,6 +16,7 @@
                         [class.is-invalid]="pswd.invalid && pswd.touched">
                 </div>
                 <small [class.d-none]="pswd.untouched || pswd.valid" class="text-danger">This field is required</small>
+                <div class="p-2">Don't have an account? <span router-link="register" (click)="goToRegister()">Sign up</span></div>
                 <div class="text-center pt-2"><input type="submit" class="btn btn-primary"
                         [disabled]="signInForm.invalid" value="Login"></div>
             </form>

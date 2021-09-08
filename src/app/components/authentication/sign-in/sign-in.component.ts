@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -11,25 +12,22 @@ export class SignInComponent implements OnInit {
 
   user: User
 
-  constructor(private auth: AuthService) {
+  constructor(private auth: AuthService, private router: Router) {
     this.user = new User()
   }
 
   onSubmit(): void {
-    this.auth.login(this.user).subscribe((response)=>{
-      let user = {
-        'name': response.user.firstName,
-        'phoneno': response.user.mobile,
-        'email': response.user.email,
-        'password': response.user.password,
-        'createdAt': response.user.createdAt,
-        'token': response.token
-      }
-      console.log(user)
+    this.auth.login(this.user).subscribe((response)=>{ 
+      this.router.navigate(['home']).catch((error)=>{console.log('Failed to navigate to home')})
+      this.auth.saveLoggedInData(response)
     },
     (error)=>{
       alert("User authentication failed!")
     })
+  }
+
+  goToRegister(){
+    this.router.navigate(['registration'])
   }
 
   ngOnInit(): void {

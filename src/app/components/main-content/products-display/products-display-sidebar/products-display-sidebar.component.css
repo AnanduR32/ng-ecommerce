@@ -1,7 +1,11 @@
 .list-group-item {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .list-group-item:hover {
-    background-color: rgb(150, 150, 150);
+  background-color: rgb(150, 150, 150);
+}
+
+.list-group {
+  border-radius: 10px;
 }

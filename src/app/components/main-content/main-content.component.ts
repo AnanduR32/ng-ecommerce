@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { GetDataService } from 'src/app/services/get-data.service';
 
 @Component({
@@ -9,8 +10,10 @@ import { GetDataService } from 'src/app/services/get-data.service';
 export class MainContentComponent implements OnInit {
 
   categories: any[];
-  constructor(private dataService: GetDataService) { 
+  constructor(private dataService: GetDataService, private auth: AuthService) { 
     this.categories = []
+    
+
   }
 
   ngOnInit(): void {
