@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-registeration',
@@ -16,11 +17,16 @@ export class RegisterationComponent implements OnInit {
   ]
 
   user: User
-  pass: string
 
-  constructor() {
+  constructor(private auth: AuthService) {
     this.user = new User()
-    this.pass = ''
+  }
+
+  onSubmit(): void {
+    // Process checkout data here
+    console.log(this.user)
+    this.auth.registerUser(this.user).subscribe((response)=>{
+    })
   }
 
   ngOnInit(): void {
