@@ -13,7 +13,7 @@
 }
 
 .custom-container {
-  max-height: 350px;
+  max-height: 380px;
   min-width: 30%;
 }
 
@@ -47,4 +47,34 @@ figcaption {
 h5 > del {
   color: grey;
   font-size: 16px;
+}
+
+.avail-circle{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.green{
+  background-color: green;
+}
+
+.red{
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green-text{
+  color: green;
+}
+
+.red-text{
+  color: red;
+}
+
+.orange-text {
+  color: orange;
 }
