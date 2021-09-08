@@ -23,8 +23,6 @@ export class RegisterationComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // Process checkout data here
-    console.log(this.user)
     this.auth.registerUser(this.user).subscribe((response)=>{
     })
   }

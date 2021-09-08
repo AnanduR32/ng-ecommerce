@@ -10,7 +10,10 @@ export class AuthService {
 
   private BASE_PATH = "http://apolis-grocery.herokuapp.com/api/"
 
-  constructor(private http: HttpClient) { }
+  user: User
+  constructor(private http: HttpClient) {
+    this.user = new User()
+   }
 
   registerUser(user: User):Observable<any>{
     let obj = {

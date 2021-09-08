@@ -16,9 +16,19 @@ export class SignInComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // Process checkout data here
-    console.log(this.user)
     this.auth.login(this.user).subscribe((response)=>{
+      let user = {
+        'name': response.user.firstName,
+        'phoneno': response.user.mobile,
+        'email': response.user.email,
+        'password': response.user.password,
+        'createdAt': response.user.createdAt,
+        'token': response.token
+      }
+      console.log(user)
+    },
+    (error)=>{
+      alert("User authentication failed!")
     })
   }
 
